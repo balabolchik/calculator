@@ -1,20 +1,25 @@
 const display = document.querySelector('.display');
+const operButtons = document.querySelectorAll('.opers>button');
+const digitButtons = document.querySelectorAll('.digits>button');
+const equals = document.querySelector('.equal');
+const backSpace = document.querySelector('.backSpace');
 
-const digitButtons = document.querySelectorAll('.digits button');
 digitButtons.forEach( button => button.addEventListener('click', digitClicked));
 
 function digitClicked(ev){
     display.value+= ev.target.innerText;
 }
 
-const operButtons = document.querySelectorAll('.opers button');
 operButtons.forEach( button => button.addEventListener('click', operClicked));
 
 function operClicked(ev){
     display.value+= ev.target.innerText;
 }
 
-const equals = document.querySelector('.equal');
-equals.addEventListener('click',()=>{
-    
+equals.addEventListener('click', () => {
+    display.value = eval(display.value);
 })
+
+backSpace.addEventListener('click', function () {
+    display.value=display.value;
+});
