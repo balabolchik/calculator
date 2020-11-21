@@ -23,3 +23,5 @@ equals.addEventListener('click', () => {
 backSpace.addEventListener('click', function () {
     display.value=display.value;
 });
+
+document.write(window.devicePixelRatio)
